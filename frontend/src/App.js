@@ -34,6 +34,7 @@ import ReporteZonal from './components/Reportes/Micro/ReporteZonal';
 import TableDetallesZonal from './components/Reportes/Micro/TableDetallesZonal';
 import ReportTemplate from './components/Reportes/Micro/ReportTemplate';
 import AltaPre from './components/Operaciones/AltaPre/AltaPre';
+import OnDevelopment from './pages/OnDevelopment';
 
 function App() {
   const {user, toggle} = useSelector(
@@ -66,9 +67,6 @@ function App() {
           paddingLeft: '5em',
           overflow:'hidden',          
         }}>
-          <div style={{backgroundColor: 'red', width: '100%', heigth: '2rem', textAlignLast: 'center', color:'white'}}>
-            <h4 style={{margin: '0'}}>Servidor de desarrollo</h4>
-          </div>
           <div style={{
          width: '100%',
          opacity: 0.5,
@@ -120,6 +118,7 @@ function App() {
           <Route path='/reportes/Micro/Zonal/:empresa/:gerente/:clasificacion' element={<TableDetallesZonal/>}/>
           <Route path='/reportTemplate' element={<ReportTemplate/>}/>
           <Route path='/operaciones/altaPre' element={<AltaPre/>}/>
+          <Route path='/onDevelopment' element={<OnDevelopment/>}/>
         </Routes> 
         </div>
        

@@ -13,7 +13,7 @@ export const SidebarData = [
     cName: 'nav-text',
     options: 
     [
-      {title: 'Altas Pre Solicitudes', rol:'1.2.1', cName:'subMenuL2', path:'/operaciones/altaPre'},
+      {title: 'Altas Pre Solicitudes', rol:'1.2.1', cName:'subMenuL2'/* , path:'/operaciones/altaPre' */, path: '/onDevelopment'},
       /* {title: 'Actualizaciones Pre Solicitudes', rol:'1.2.2', cName:'subMenuL2' , path:'/'},
       {title: 'Actualizacion Operaciones', rol:'1.2.3', cName:'subMenuL2' , path:'/'},
       {title: 'Alta Cartera', rol:'1.2.4', cName:'subMenuL2' , path:'/'},
@@ -150,21 +150,21 @@ export const SidebarData = [
     options: 
     [
 
-      {title: 'Vendedores', rol:'1.7.1',path:'/vendedores' , cName:'subMenuL2'},
-      {title: 'Team Leader', rol:'1.7.19', path:'/teamleaders', cName:'subMenuL2', },
-      {title: 'Supervisores', rol:'1.7.2', path:'/supervisores', cName:'subMenuL2'},
-      {title: 'Gerentes', rol:'1.7.18', path:'/gerentes', cName:'subMenuL2'},
-      {title: 'Estructura Comercial', rol:'1.7.20', cName:'subMenuL2', path:'/Estructura'},
-      {title: 'Modelos', rol:'1.7.6', cName:'subMenuL2', path:'/modelos'},
+      {title: 'Vendedores', rol:'1.7.1'/* ,path:'/vendedores' */, path: '/onDevelopment' , cName:'subMenuL2'},
+      {title: 'Team Leader', rol:'1.7.19'/* , path:'/teamleaders' */, path: '/onDevelopment', cName:'subMenuL2', },
+      {title: 'Supervisores', rol:'1.7.2'/* , path:'/supervisores' */, path: '/onDevelopment', cName:'subMenuL2'},
+      {title: 'Gerentes', rol:'1.7.18'/* , path:'/gerentes' */, path: '/onDevelopment', cName:'subMenuL2'},
+      {title: 'Estructura Comercial', rol:'1.7.20', cName:'subMenuL2'/* , path:'/Estructura' */, path: '/onDevelopment'},
+      {title: 'Modelos', rol:'1.7.6', cName:'subMenuL2'/* , path:'/modelos' */, path: '/onDevelopment'},
 /*       {title: 'Cambio Modelo', rol:'1.7.4', cName:'subMenuL2', path:'/'}, */
-      {title: 'Lista de Precios', rol:'1.7.7', cName:'subMenuL2', path:'/listasprecios'},
-      {title: 'Puntos de Venta', rol:'1.7.9', cName:'subMenuL2', path:'/puntosDeVenta'},
-      {title: 'Sucursales', rol:'1.7.3', cName:'subMenuL2', path:'/sucursales'},
+      {title: 'Lista de Precios', rol:'1.7.7', cName:'subMenuL2'/* , path:'/listasprecios' */, path: '/onDevelopment'},
+      {title: 'Puntos de Venta', rol:'1.7.9', cName:'subMenuL2'/* , path:'/puntosDeVenta' */, path: '/onDevelopment'},
+      {title: 'Sucursales', rol:'1.7.3', cName:'subMenuL2'/* , path:'/sucursales' */, path: '/onDevelopment'},
 /*       {title: 'Objetivos X Marca', rol:'1.7.11', cName:'subMenuL2', path:'/'},
       {title: 'Objetivos Mora', rol:'1.7.12', cName:'subMenuL2', path:'/'},
       {title: 'Objetivos X Grupo Mora', rol:'1.7.13', cName:'subMenuL2', path:'/'},
       {title: 'Objetivos Altas Bajas Mesa de Planes', rol:'1.7.14', cName:'subMenuL2', path:'/'}, */
-      {title: 'Oficiales', rol:'1.7.8', cName:'subMenuL2', path:'/oficiales'},
+      {title: 'Oficiales', rol:'1.7.8', cName:'subMenuL2'/* , path:'/oficiales' */, path: '/onDevelopment'},
 /*       {title: 'ABM Intereses', rol:'1.7.17', cName:'subMenuL2', path:'/'}, */
       {title: 'Usuarios', rol:'1.7.16', cName:'subMenuL2',
       options: [
@@ -172,10 +172,10 @@ export const SidebarData = [
         {title: 'Alta y Modificación de Roles', rol: '1.7.16.2', cName:'subMenuL2', 
         
         options:[
-          {title: 'Alta y Modificación de Roles', rol: '1.7.16.2', path:'/roles', cName:'subMenuL2'},
-          {title: 'Copiar Roles', rol: '1.7.16.2', path:'/copyRoles', cName:'subMenuL2'}
+          {title: 'Alta y Modificación de Roles', rol: '1.7.16.2'/* , path:'/roles' */, path: '/onDevelopment', cName:'subMenuL2'},
+          {title: 'Copiar Roles', rol: '1.7.16.2'/* , path:'/copyRoles' */, path: '/onDevelopment', cName:'subMenuL2'}
         ]},
-        {title: 'Alta y Modificación de Usuarios', rol: '1.7.16.3', path: '/usuarios', cName:'subMenuL2'},
+        {title: 'Alta y Modificación de Usuarios', rol: '1.7.16.3'/* , path: '/usuarios' */, path: '/onDevelopment', cName:'subMenuL2'},
       ]},
 /*       {title: 'Cambio de Contraseña', rol:'1.7.10', cName:'subMenuL2', path:'/'},
       {title: 'Cambio De Contraseña Sueldos', rol:'1.7.5', cName:'subMenuL2', path:'/'},
