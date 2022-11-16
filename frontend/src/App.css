@@ -1,0 +1,103 @@
+.App {
+  display: flex;
+  overflow: hidden;
+  /* height: 80vh; */
+/*   background-color: aliceblue; */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+input[type=checkbox] {
+  border: solid 1px;
+ -webkit-appearance: none;
+ -moz-appearance: none;
+
+ height: 1em;
+ width: 1em;
+ margin-right: 0.3rem;
+/*  max-width: 1.5em; */
+
+}
+
+.logo{
+  background-color: #090909;
+  margin:auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 4cm;
+  height: 3cm;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+ }
+
+ .logoShort{
+  background-color: #090909;
+  margin:auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 4cm;
+  height: 2.5cm;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+ }
+
+.img{
+  background-color: #090909;
+  margin:auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 5cm;
+  height: 4cm;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+ }
+
+
+
+/*.form-select{
+  font-size: small;
+}*/
+
+input[type=checkbox]:checked {
+  background-color: ghostwhite;
+  background-image: url('check.png') ;
+  /* background-blend-mode: difference ; */
+  background-size: 105%;
+  background-repeat: no-repeat;
+  /* opacity: 0; */
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

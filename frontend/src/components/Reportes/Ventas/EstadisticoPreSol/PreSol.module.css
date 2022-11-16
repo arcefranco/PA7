@@ -1,0 +1,201 @@
+.selects {
+    max-width: 45rem;
+    min-width: 45rem;
+    border-top: 3px solid #d2d6de;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    background: white;
+
+    border-radius: 0.25rem;
+}
+
+.selectContainer {
+    text-align: -webkit-center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    align-items: center;
+
+}
+.formContainer{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    place-content: center;
+}
+
+.exportButtons{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+
+.exportButton{
+    border: none;
+    background-color: #545e65;
+    color: white;
+    border-radius: 3px;
+    padding: 4px;
+    font-size: 13px;
+    
+}
+
+.exportButton:hover{
+    background-color: #545e65ab;
+}
+.dataGridDetail{
+    height: calc(100vh - 92.8px);
+}
+.vendedorColumn{
+    font-size: 9px;
+}
+.loadingGrid{
+    height: -webkit-fill-available;
+    position: absolute;
+    z-index: 1;
+    width: -webkit-fill-available;
+    background: #928d8d94;
+    display: flex;
+    align-items: center;
+    place-content: center;
+}
+.selectGrid {
+    display: flex;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.selectGrid div {
+    text-align: start;
+
+}
+
+.item {
+    background-color: #a9a9a91f;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+
+    align-items: center;
+    padding: 10px;
+    text-align-last: start;
+}
+
+.noHeader th {
+    width: 2.3rem;
+    max-width: 2.3rem;
+    min-width: 2.3rem;
+}
+
+.tdNumber {
+    text-align-last: end;
+}
+
+.tableDetalle {
+    margin-top: 2rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+    height: auto;
+    max-height: 20rem;
+
+}
+
+.tableDetalle th {
+    padding: 1rem;
+    background: #0c0c0ca8;
+    color: white;
+    font-weight: 100;
+    text-align-last: center;
+}
+
+.tableDetalle td {
+    border: 1px solid #00000021;
+    font-size: 0.7em;
+    text-align-last: center;
+}
+
+.buttonOperacion {
+    padding: 0.25rem 0.3rem 0.25rem 0.3rem;
+    border: none;
+    background-color: #3c8dbc;
+    border-radius: 0.25em;
+    box-shadow: none;
+    min-width: 4.5em;
+    color: white;
+    margin: 0.05em;
+    font-size: .9em;
+}
+
+.headerFixed {
+    position: sticky;
+    top: 0;
+}
+
+
+
+.title{
+    text-align-last: center;
+    font-size: 10px;
+    font-size: bold;
+    color: black;
+}
+
+
+.dataGrid{
+    margin: 7px; 
+    font-size: 11px;
+}
+
+ .columnIng {
+    background-color: violet;
+}
+
+.columnProd{
+    background-color: rgba(172, 255, 47, 0.599);
+}
+
+.columnTot1{
+    background-color: rgba(255, 255, 0, 0.504);
+}
+
+.columnTot2{
+    background-color: rgba(255, 166, 0, 0.619);
+}
+
+.dx-datagrid-headers .detalleTitle {  
+    background-color: red;  
+}  
+
+.titleDetalleContainer{
+    display: flex;
+align-items: center;
+margin-left: .8rem;
+}
+
+.titleDetalleContainer .logoShort {
+    width: 3rem;
+    height: 1rem;
+    margin:0;
+}
+
+.titleDetalleContainer .logo{
+    width: 3rem;
+    height: 1rem;
+    margin:0;
+}
+.titleDetalleContainer div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.titleDetalleContainer span{
+    font-size: 8px;
+}    
+
+
+

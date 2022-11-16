@@ -1,0 +1,36 @@
+.pageItem{
+    padding: 0.6em;
+    font-size: 11px;
+}
+.pgNumber{
+    text-decoration: none;
+    color: black;
+
+}
+.pageItem.active {
+background-color:  #d1cfcf;
+font-size: 12px;
+}
+
+.nav{
+    display: flex;
+/*     position: absolute; */
+    margin-top: 2rem;
+    bottom: -95px;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    place-content: center;
+    right: 50%;
+    text-align: center;
+}
+
+.ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
