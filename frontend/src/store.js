@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
+  persistCombineReducers,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -29,18 +30,25 @@ import AltaPreReducer from "./reducers/Operaciones/altaPre/altaPreSlice";
 import EfectividadAdjReducer from "./reducers/Reportes/efectividadAdj/efectividadAdjSlice";
 import MoraXVendedorYSupReducer from "./reducers/Reportes/MoraXVendedorYSup/MoraSlice";
 
-const persistConfig = {
+const persistConfigZonal = {
   key: "root",
   version: 1,
   storage,
 };
 
+const persistConfigMoraXVendedorYSup = {
+  key: "root",
+  whitelist: ["MoraXVendedor", "MoraDetalle"],
+  version: 1,
+  storage,
+};
+
 const ReporteZonalPersisted = persistReducer(
-  persistConfig,
+  persistConfigZonal,
   ReporteZonalReducer
 );
 const MoraXVendedorYSupPersisted = persistReducer(
-  persistConfig,
+  persistConfigMoraXVendedorYSup,
   MoraXVendedorYSupReducer
 );
 
