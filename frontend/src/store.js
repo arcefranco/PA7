@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit"
+import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -8,32 +8,41 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
-import loginReducer from './reducers/Login/loginSlice'
-import gerentesReducer from './reducers/ConfigDatosGenerales/Gerentes/gerentesSlice'
-import usuariosReducer from './reducers/ConfigDatosGenerales/Usuarios/UsuariosSlice'
-import supervisoresReducer from './reducers/ConfigDatosGenerales/Supervisores/supervisoresSlice'
-import sucursalesReducer from './reducers/ConfigDatosGenerales/Sucursales/SucursalesSlice'
-import { combineReducers } from "@reduxjs/toolkit"
-import modelosReducer from "./reducers/ConfigDatosGenerales/Modelos/modelosSlice"
-import teamLeadersReducer from "./reducers/ConfigDatosGenerales/TeamLeaders/teamLeadersSlice"
-import vendedoresReducer from "./reducers/Vendedores/vendedoresSlice"
-import oficialesReducer from './reducers/ConfigDatosGenerales/Oficiales/OficialesSlice'
-import puntosReducer from './reducers/ConfigDatosGenerales/PuntosDeVenta/puntosSlice'
-import estructuraReducer from './reducers/ConfigDatosGenerales/Estructura/EstructuraSlice'
-import listaReducer from './reducers/ConfigDatosGenerales/ListasPrecios/ListaSlice'
-import PreSolVentasReducer from './reducers/Reportes/Ventas/PreSolSlice'
-import ReporteZonalReducer from './reducers/Reportes/Micro/ZonalSlice'
-import AltaPreReducer from './reducers/Operaciones/altaPre/altaPreSlice'
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import loginReducer from "./reducers/Login/loginSlice";
+import gerentesReducer from "./reducers/ConfigDatosGenerales/Gerentes/gerentesSlice";
+import usuariosReducer from "./reducers/ConfigDatosGenerales/Usuarios/UsuariosSlice";
+import supervisoresReducer from "./reducers/ConfigDatosGenerales/Supervisores/supervisoresSlice";
+import sucursalesReducer from "./reducers/ConfigDatosGenerales/Sucursales/SucursalesSlice";
+import { combineReducers } from "@reduxjs/toolkit";
+import modelosReducer from "./reducers/ConfigDatosGenerales/Modelos/modelosSlice";
+import teamLeadersReducer from "./reducers/ConfigDatosGenerales/TeamLeaders/teamLeadersSlice";
+import vendedoresReducer from "./reducers/Vendedores/vendedoresSlice";
+import oficialesReducer from "./reducers/ConfigDatosGenerales/Oficiales/OficialesSlice";
+import puntosReducer from "./reducers/ConfigDatosGenerales/PuntosDeVenta/puntosSlice";
+import estructuraReducer from "./reducers/ConfigDatosGenerales/Estructura/EstructuraSlice";
+import listaReducer from "./reducers/ConfigDatosGenerales/ListasPrecios/ListaSlice";
+import PreSolVentasReducer from "./reducers/Reportes/Ventas/PreSolSlice";
+import ReporteZonalReducer from "./reducers/Reportes/Micro/ZonalSlice";
+import AltaPreReducer from "./reducers/Operaciones/altaPre/altaPreSlice";
+import EfectividadAdjReducer from "./reducers/Reportes/efectividadAdj/efectividadAdjSlice";
+import MoraXVendedorYSupReducer from "./reducers/Reportes/MoraXVendedorYSup/MoraSlice";
 
 const persistConfig = {
-  key: 'root',
+  key: "root",
   version: 1,
   storage,
-}
+};
 
-const ReporteZonalPersisted = persistReducer(persistConfig, ReporteZonalReducer)
+const ReporteZonalPersisted = persistReducer(
+  persistConfig,
+  ReporteZonalReducer
+);
+const MoraXVendedorYSupPersisted = persistReducer(
+  persistConfig,
+  MoraXVendedorYSupReducer
+);
 
 const reducer = combineReducers({
   login: loginReducer,
@@ -50,19 +59,19 @@ const reducer = combineReducers({
   puntosDeVenta: puntosReducer,
   PreSolVentas: PreSolVentasReducer,
   ReporteZonal: ReporteZonalPersisted,
-  AltaPre: AltaPreReducer
-})
-
-
+  AltaPre: AltaPreReducer,
+  EfectividadAdj: EfectividadAdjReducer,
+  MoraXVendedorYSup: MoraXVendedorYSupPersisted,
+});
 
 export const store = configureStore({
   reducer: reducer,
   middleware: (getDefaultMiddleware) =>
-  getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  })
-})
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
 
-export let persistor = persistStore(store)
+export let persistor = persistStore(store);
