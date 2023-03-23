@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit/dist";
 import MoraService from "./MoraService";
 
 const initialState = {
-  MoraXVendedor: [],
+  MoraXVendedor: null,
   MoraDetalle: [],
   MoraStatus: null,
   isError: false,
@@ -16,7 +16,7 @@ export const getMoraXVendedor = createAsyncThunk(
   "Reportes/MoraXVendedor",
   async (data, { rejectWithValue }) => {
     const result = await MoraService.getMoraXVendedor(data);
-    if (Array.isArray(result)) {
+    if (result.hasOwnProperty("resumen") && result.hasOwnProperty("detalle")) {
       return result;
     } else {
       return rejectWithValue(result);
@@ -28,7 +28,7 @@ export const getMoraXSupervisor = createAsyncThunk(
   "Reportes/MoraXSupervisor",
   async (data, { rejectWithValue }) => {
     const result = await MoraService.getMoraXSupervisor(data);
-    if (Array.isArray(result)) {
+    if (result.hasOwnProperty("resumen") && result.hasOwnProperty("detalle")) {
       return result;
     } else {
       return rejectWithValue(result);
@@ -40,19 +40,7 @@ export const getMoraXSupervisorSC = createAsyncThunk(
   "Reportes/MoraXSupervisorSC",
   async (data, { rejectWithValue }) => {
     const result = await MoraService.getMoraXSupervisorSC(data);
-    if (Array.isArray(result)) {
-      return result;
-    } else {
-      return rejectWithValue(result);
-    }
-  }
-);
-
-export const getMoraXOficialDetalle = createAsyncThunk(
-  "Reportes/MoraXOficialDetalle",
-  async (data, { rejectWithValue }) => {
-    const result = await MoraService.getMoraXOficialDetalle(data);
-    if (Array.isArray(result)) {
+    if (result.hasOwnProperty("resumen") && result.hasOwnProperty("detalle")) {
       return result;
     } else {
       return rejectWithValue(result);
@@ -78,7 +66,8 @@ export const MoraSlice = createSlice({
       .addCase(getMoraXVendedor.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.MoraXVendedor = action.payload;
+        state.MoraXVendedor = action.payload.resumen;
+        state.MoraDetalle = action.payload.detalle;
       })
       .addCase(getMoraXVendedor.rejected, (state, action) => {
         state.isLoading = false;
@@ -91,7 +80,8 @@ export const MoraSlice = createSlice({
       .addCase(getMoraXSupervisor.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.MoraXVendedor = action.payload;
+        state.MoraXVendedor = action.payload.resumen;
+        state.MoraDetalle = action.payload.detalle;
       })
       .addCase(getMoraXSupervisor.rejected, (state, action) => {
         state.isLoading = false;
@@ -104,7 +94,8 @@ export const MoraSlice = createSlice({
       .addCase(getMoraXSupervisorSC.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.MoraXVendedor = action.payload;
+        state.MoraXVendedor = action.payload.resumen;
+        state.MoraDetalle = action.payload.detalle;
       })
       .addCase(getMoraXSupervisorSC.rejected, (state, action) => {
         state.isLoading = false;
@@ -112,19 +103,6 @@ export const MoraSlice = createSlice({
         state.MoraStatus = action.payload;
       })
       .addCase(getMoraXSupervisorSC.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(getMoraXOficialDetalle.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.MoraDetalle = action.payload;
-      })
-      .addCase(getMoraXOficialDetalle.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        state.MoraStatus = action.payload;
-      })
-      .addCase(getMoraXOficialDetalle.pending, (state) => {
         state.isLoading = true;
       });
   },
