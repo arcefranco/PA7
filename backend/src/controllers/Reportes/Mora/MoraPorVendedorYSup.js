@@ -25,7 +25,9 @@ export const getMoraXVendedor = async (req, res) => {
 
     cantidadVendedores = result.filter(
       (tag, index, array) =>
-        array.findIndex((t) => t.Oficial == tag.Oficial) == index
+        array.findIndex(
+          (t) => t.Oficial == tag.Oficial && t.SucCodigo == tag.SucCodigo
+        ) == index
     );
 
     /* por cada vendedor pusheo un objeto de la tabla al array final */
@@ -78,7 +80,10 @@ export const getMoraXVendedor = async (req, res) => {
     let capaPER;
     for (let j = 0; j < result.length; j++) {
       for (let x = 0; x < array.length; x++) {
-        if (result[j].Oficial === array[x].Vendedor) {
+        if (
+          result[j].Oficial === array[x].Vendedor &&
+          result[j].SucCodigo === array[x].SucCodigo
+        ) {
           capaV = `V${result[j].Capa}`;
           capaM = `M${result[j].Capa}`;
           capaPER = `PER${result[j].Capa}`;
@@ -86,11 +91,6 @@ export const getMoraXVendedor = async (req, res) => {
           array[x][capaM] = result[j].M;
           array[x][capaPER] =
             Math.round((result[j].M / result[j].V) * 100).toString() + "%";
-          /* = {
-            V: result[j].V,
-            M: result[j].M,
-            PER: Math.round((result[j].M / result[j].V) * 100).toString() + "%",
-          }; */
         }
       }
     }
