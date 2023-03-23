@@ -45,6 +45,7 @@ const MoraXVendedor = () => {
     useEffect(() => {
       
       if(MoraXVendedor.length >= 1){
+        console.log(MoraXVendedor.length)
         setMes(MoraXVendedor[0]?.Mes === 1 ? 'Enero' : 
         MoraXVendedor[0]?.Mes === 2 ? 'Febrero' : MoraXVendedor[0]?.Mes === 3 ? 'Marzo' :
         MoraXVendedor[0]?.Mes === 4 ? 'Abril' : MoraXVendedor[0]?.Mes === 5 ? 'Mayo' : 
