@@ -267,7 +267,12 @@ export const getMoraXSupervisor = async (req, res) => {
       );
     }
 
-    return res.send({ resumen: array, detalle: resultDetalle });
+    return res.send({
+      resumen: array,
+      detalle: resultDetalle,
+      mes: mes,
+      anio: anio,
+    });
   } catch (error) {
     return res.send({ status: false, message: returnErrorMessage(error) });
   }
