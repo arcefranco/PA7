@@ -84,9 +84,8 @@ return (
         MoraXOficialDetalle[0]?.Mes === 8 ? 'Agosto' : MoraXOficialDetalle[0]?.Mes === 9 ? 'Septiembre' : 
         MoraXOficialDetalle[0]?.Mes === 10 ? 'Octubre' : MoraXOficialDetalle[0]?.Mes === 11 ? 'Noviembre' : 
         MoraXOficialDetalle[0]?.Mes === 12 ? 'Diciembre' : ''} {MoraXOficialDetalle[0]?.Anio} {' '} 
-         (Incluye cuotas pagadas por Giama). {esVendedor == 1 && Codigo === "todos" ? "Todos los Vendedores" : esVendedor != 1 && Codigo === "todos" ? 
-         "Todos los Supervisores" : esVendedor == 1 && Codigo !== "todos" ? "Vendedor: " : "Supervisor: "} 
-         {esVendedor == 1 && Codigo == "todos" ? "" : esVendedor == 1 ? Codigo : MoraXOficialDetalle.find(e => e.NomOficial == Codigo)?.NomSucursal}. Capa {Capa}. 
+         (Incluye cuotas pagadas por Giama). {Codigo == "todos" ? "Todos los Oficiales" : "Oficial: " }
+         {Codigo == "todos" ? "" : Codigo}. Capa {Capa}. 
         {" "}{Pagadas == -1 ? "Vencidos" : "Morosos"}. Cant Op: {detalleFiltered.length}.
     </TitleSecondary2> 
     </BiggerTitleLogo>
