@@ -47,7 +47,7 @@ const persistConfigMoraXOficial = {
   key: "root",
   version: 1,
   storage,
-  whitelist: ["MoraXOficialDetalle"],
+  whitelist: ["MoraXOficialDetalle", "mes", "anio"],
 };
 
 const ReporteZonalPersisted = persistReducer(

@@ -6,6 +6,8 @@ const initialState = {
   MoraXOficial: null,
   MoraXOficialDetalle: [],
   MoraStatus: null,
+  mes: "",
+  anio: "",
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -34,6 +36,8 @@ export const MoraXOficialSlice = createSlice({
       state.isError = false;
       state.message = "";
       state.MoraXOficial = [];
+      state.mes = "";
+      state.anio = "";
     },
   },
   extraReducers: (builder) => {
@@ -43,6 +47,8 @@ export const MoraXOficialSlice = createSlice({
         state.isSuccess = true;
         state.MoraXOficial = action.payload.resumen;
         state.MoraXOficialDetalle = action.payload.detalle;
+        state.mes = action.payload.mes;
+        state.anio = action.payload.anio;
       })
       .addCase(getMoraXOficial.rejected, (state, action) => {
         state.isLoading = false;
