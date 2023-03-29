@@ -18,7 +18,10 @@ import ventasPreSol from "./routes/Reportes/Ventas/preSolRoutes";
 import ListasRouter from "./routes/ConfigDatosGenerales/listasRoutes";
 import reporteZonalRouter from "./routes/Reportes/Micro/reporteZonalRoutes";
 import altaPreRouter from "./routes/Operaciones/altaPreRoutes";
-import moraXVendedorYSupRouter from "./routes/Mora/MoraPorVendedorYSup";
+/* import actualPreRouter from "./routes/Operaciones/actualPreRoutes"; */
+/* import efectividadAdjRouter from "./routes/Reportes/AdmPlanes/efectividadAdjRoutes"; */
+import moraXVendedorYSupRouter from "./routes/Reportes/Mora/MoraPorVendedorYSup";
+import moraXOficial from "./routes/Reportes/Mora/MoraXOficial";
 require("dotenv").config();
 
 const passport = require("passport");
@@ -28,8 +31,6 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-
-//prueba
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", "true");
@@ -46,9 +47,7 @@ app.use("/login", UserRouter);
 app.use("/gerentes", GerentesRouter);
 app.use("/reset", resetRouter);
 app.use("/usuarios", usuariosRoutes);
-
 app.use("/sucursales", SucursalesRouter);
-
 app.use("/listas", ListasRouter);
 app.use("/teamleaders", TeamLeadersRouter);
 app.use("/estructura", estructuraRouter);
@@ -61,8 +60,10 @@ app.use("/puntosDeVenta", puntosVentaRouter);
 app.use("/Reportes/Ventas/PreSol", ventasPreSol);
 app.use("/Reportes/Micro/Zonal", reporteZonalRouter);
 app.use("/Operaciones/AltaPre", altaPreRouter);
+/* app.use("/Operaciones/ActualPre", actualPreRouter);
+app.use("/Reportes/efectividadAdj", efectividadAdjRouter); */
 app.use("/Reportes/MoraXVendedorYSup", moraXVendedorYSupRouter);
-
+app.use("/Reportes/MoraXOficial", moraXOficial);
 app.listen(process.env.PORT, () => {
   console.log(`App is running on port`, process.env.PORT);
 });

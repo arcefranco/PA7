@@ -435,6 +435,12 @@ export const SidebarData = [
             cName: "subMenuL2",
             path: "reportes/MoraXSupervisor/2",
           },
+          {
+            title: "Mora por Oficial",
+            rol: "1.10.3",
+            cName: "subMenuL2",
+            path: "reportes/MoraXOficial",
+          },
         ],
       },
       /*   {title: 'Facturación', rol:'1.10.4', cName:'subMenuL2'},

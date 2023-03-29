@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { testConnection } from "../../middlewares/testConnection";
+import { testConnection } from "../../../middlewares/testConnection";
 import {
   getMoraXSupervisor,
   getMoraXVendedor,
-} from "../../controllers/Reportes/Mora/MoraPorVendedorYSup";
+} from "../../../controllers/Reportes/Mora/MoraPorVendedorYSup";
 require("dotenv").config();
 
 const moraXVendedorYSupRouter = Router();

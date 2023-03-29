@@ -34,10 +34,14 @@ import ReporteZonal from "./components/Reportes/Micro/ReporteZonal";
 import TableDetallesZonal from "./components/Reportes/Micro/TableDetallesZonal";
 import ReportTemplate from "./components/Reportes/Micro/ReportTemplate";
 import AltaPre from "./components/Operaciones/AltaPre/AltaPre";
-import OnDevelopment from "./pages/OnDevelopment";
+/* import ActualPreScreen from "./components/Operaciones/ActualizacionPre/ActualPreScreen";
+import ActualForm from "./components/Operaciones/ActualizacionPre/ActualForm"; */
+/* import EfectividadAdjForm from "./components/Reportes/AdminPlanes/EfectividadAdj/EfectividadAdjForm";
+import EfectividadDetalle from "./components/Reportes/AdminPlanes/EfectividadAdj/EfectividadDetalle"; */
 import MoraXVendedor from "./components/Reportes/Mora/MoraXVendedorYSup/MoraXVendedor";
-import MoraXOficialDetalle from "./components/Reportes/Mora/MoraXVendedorYSup/MoraXOficialDetalle";
-
+import MoraXVYSDetalle from "./components/Reportes/Mora/MoraXVendedorYSup/MoraXVYSDetalle";
+import MoraXOficial from "./components/Reportes/Mora/MoraXOficial/MoraXOficial";
+import MoraXOficialDetalle from "./components/Reportes/Mora/MoraXOficial/MoraXOficialDetalle";
 function App() {
   const { user, toggle } = useSelector((state) => state.login);
 
@@ -108,14 +112,6 @@ function App() {
           <Route path="/copyRoles" element={<CopyRoles />} />
           <Route path="/oficiales" element={<OficialesMenu />} />
           <Route path="/oficiales/:table" element={<OficialesTable />} />
-          <Route
-            path="/modifOficiales/:categoria/:id"
-            element={<OficialesForm />}
-          />
-          <Route
-            path="/modifOficiales/:categoria"
-            element={<OficialesForm />}
-          />
           <Route path="/permission" element={<NotPermission />} />
           <Route path="/480" element={<ErrorDB />}></Route>
           <Route path="/Estructura" element={<Estructura />} />
@@ -161,7 +157,22 @@ function App() {
           />
           <Route path="/reportTemplate" element={<ReportTemplate />} />
           <Route path="/operaciones/altaPre" element={<AltaPre />} />
-          <Route path="/onDevelopment" element={<OnDevelopment />} />
+          {/*           <Route
+            path="/operaciones/actualizacionPre"
+            element={<ActualPreScreen />}
+          /> */}
+          {/*           <Route
+            path="/operaciones/actualizacionPre/:codigoMarca/:Numero"
+            element={<ActualForm />}
+          /> */}
+          {/*           <Route
+            path="reportes/efectividadAdj"
+            element={<EfectividadAdjForm />}
+          /> */}
+          {/*           <Route
+            path="/detalleEfectividad/:marca/:tipo/:mes/:anio/:oficial/:periodoCompleto"
+            element={<EfectividadDetalle />}
+          /> */}
           <Route path="reportes/MoraXVendedor" element={<MoraXVendedor />} />
           <Route
             path="reportes/MoraXSupervisor/:Sup"
@@ -169,6 +180,11 @@ function App() {
           />
           <Route
             path="reportes/MoraXOficialDetalle/:esVendedor/:Codigo/:Capa/:Pagadas"
+            element={<MoraXVYSDetalle />}
+          />
+          <Route path="reportes/MoraXOficial" element={<MoraXOficial />} />
+          <Route
+            path="reportes/MoraXOficialDetalle/2/:Codigo/:Capa/:Pagadas"
             element={<MoraXOficialDetalle />}
           />
         </Routes>
