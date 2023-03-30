@@ -397,8 +397,20 @@ export const SidebarData = [
     icon: <BiPrinter />,
     cName: "nav-text",
     options: [
-      /*      {title: 'Ejecuta InterEmpresa', rol:'1.10.0', cName:'subMenuL2'},
-      {title: 'Administración de Planes', rol:'1.10.1', cName:'subMenuL2'}, */
+      /*      {title: 'Ejecuta InterEmpresa', rol:'1.10.0', cName:'subMenuL2'},*/
+      {
+        title: "Administración de Planes",
+        rol: "1.10.1",
+        cName: "subMenuL2",
+        options: [
+          {
+            title: "Op. Conformadas por fecha",
+            rol: "1.10.2",
+            cName: "subMenuL2",
+            path: "/reportes/OpConformadasXFecha",
+          },
+        ],
+      },
       {
         title: "Ventas",
         rol: "1.10.2",
