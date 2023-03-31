@@ -90,6 +90,7 @@ return (
       <span>{user?.empresaReal}</span>
       <ReturnLogo empresa={user?.empresaReal} />
     </div>
+   { MoraXVendedor &&
     <TitleSecondary2>
       CONSOLIDADO. Período: {MoraXVendedor[0]?.Mes === 1 ? 'Enero' : 
         MoraXVendedor[0]?.Mes === 2 ? 'Febrero' : MoraXVendedor[0]?.Mes === 3 ? 'Marzo' :
@@ -103,6 +104,7 @@ return (
          {esVendedor == 1 && Codigo == "todos" ? "" : esVendedor == 1 ? Codigo : MoraDetalle.find(e => e.CodSucursal == Codigo)?.NomSucursal}. Capa {Capa}. 
         {" "}{Pagadas == -1 ? "Vencidos" : "Morosos"}. Cant Op: {detalleFiltered.length}.
     </TitleSecondary2>
+    }
     </BiggerTitleLogo>
 
     <DataGrid

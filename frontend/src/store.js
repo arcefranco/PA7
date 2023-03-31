@@ -41,7 +41,7 @@ const persistConfigMoraXVendedorYSup = {
   key: "root",
   version: 1,
   storage,
-  whitelist: ["MoraDetalle"],
+  whitelist: ["MoraDetalle", "MoraXVendedor"],
 };
 
 const persistConfigMoraXOficial = {
