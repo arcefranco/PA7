@@ -369,7 +369,7 @@ const getProm = (data) => {
        
       </BiggerTitleLogo>
 
- <ReportesForm dispatchFunc={getPreSol}/>
+ <ReportesForm dispatchFunc={getPreSol} fechaD={1} fechaH={1} mes={1} anio={1}/>
 
 
 
